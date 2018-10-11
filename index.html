@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<div id="app">
+<div id="app" v-cloak>
     <h1>Vue.js weather forecast demo</h1>
     <div class="form">
         <input type="text" v-model="location" v-on:keyup.enter="formSubmitted"/>
