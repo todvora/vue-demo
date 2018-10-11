@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Vue.js demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="app">
+    <h1>Vue.js weather forecast demo</h1>
+    <div class="form">
+        <input type="text" v-model="location" v-on:keyup.enter="formSubmitted"/>
+        <input type="button" v-on:click="formSubmitted" value="🔍"/>
+    </div>
+    <transition name="slide-fade">
+        <div class="message" v-if="message" v-text="message"></div>
+    </transition>
+    <div class="history">
+        <span v-for="loc in history" v-text="loc" v-on:click="historyEntryClicked(loc);" class="label"></span>
+    </div>
+    <div class="row">
+        <div style="width: 200px">
+            <h2 class="row">{{forecast.name}}<img v-bind:src="forecastIcon" width="50" height="50"/></h2>
+            <table>
+                <tr>
+                    <td>Temp:</td>
+                    <td>{{forecast.main.temp}} °C</td>
+                </tr>
+                <tr>
+                    <td>humidity:</td>
+                    <td>{{forecast.main.humidity}} %</td>
+                </tr>
+                <tr>
+                    <td>Wind:</td>
+                    <td>{{forecast.wind.speed}} m/s</td>
+                </tr>
+                <tr>
+                    <td>Clouds:</td>
+                    <td>{{forecast.clouds.all}} %</td>
+                </tr>
+            </table>
+        </div>
+        <div id="mapid"></div>
+
+    </div>
+    <footer>
+        Created by <a href="https://www.tomas-dvorak.cz">Tomas Dvorak</a>, sources on <a href="https://github.com/todvora/vue-demo">github.com/todvora/vue-demo</a>
+    </footer>
+
+</div>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

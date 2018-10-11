@@ -1,0 +1,96 @@
+body {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.form {
+    display:flex;
+    flex-direction:row;
+    border: 1px solid #c9c9c9;
+    padding: 3px;
+    border-radius: 3px;
+    min-height: 31px;
+    background-color: #fff;
+}
+
+input {
+    border:none;
+    background-color: #fff;
+}
+
+input[type=text] {
+    flex-grow:2;
+    border:none;
+    font-size: 120%;
+    padding-left: 5px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h2.row {
+    align-items: center;
+}
+
+td:nth-child(even) {
+    text-align: right;
+}
+
+a {
+    color: #4a4a4a;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 80%;
+    text-align: right;
+}
+
+#app {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#mapid {
+    height: 300px;
+    width: 300px;
+}
+
+.label {
+    margin: 5px 5px 5px 0;
+    border: 1px solid #c9c9c9;
+    padding: 3px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+    align-items: start;
+}
+
+.history {
+    margin: 20px 0;
+}
+.message {
+    margin: 20px 0;
+    background-color: #f09824;
+    padding: 10px;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all 1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(50px);
+    opacity: 0;
+}
